@@ -18,3 +18,60 @@
     --shadow: #c4b8a8;
     --favorite: #eaf0ed;
 }
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /*other color for development*/
+    background-color: var(--brown);
+}
+
+svg {
+    width: 30px;
+    height: 30px;
+}
+
+h1, h2 {
+    color: var(--title);
+    font-family: 'Playfair Display', serif;
+}
+
+p {
+    color: var(--text);
+}
+
+.header {
+    /*other color for development*/
+    background-color: var(--yellow);
+    border-bottom: solid var(--border);
+    /*not sure for border yet*/
+}
+
+.header__content {
+    padding : 15px 80px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header__logo-wrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 30%;
+    background-color: var(--green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__logo {
+    transform: translate(10%, 10%);
+}
+
+.header__title {
+    display: flex;
+    flex-direction: column;
+}
