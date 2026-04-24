@@ -24,9 +24,10 @@
     box-sizing: border-box;
 }
 
-html {
-    /*other color for development*/
-    background-color: var(--brown);
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 svg {
@@ -43,15 +44,34 @@ p {
     color: var(--text);
 }
 
-.header {
+a {
+    text-decoration: none;
+    color: linktext;
+}
+
+.header, .footer {
+    min-height: 80px;
     /*other color for development*/
     background-color: var(--yellow);
+    border-top: solid var(--border);
     border-bottom: solid var(--border);
     /*not sure for border yet*/
 }
 
+.main {
+    flex: 1;
+    /*other color for development*/
+    background-color: var(--brown);
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .header__content {
-    padding : 15px 80px;
+    padding: 15px 80px;
     display: flex;
     align-items: center;
     gap: 10px;
