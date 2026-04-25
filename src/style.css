@@ -165,6 +165,75 @@ a {
     background-color: var(--yellow);
     flex: 1;
     border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.book {
+    background-color: var(--card);
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.book__image-wrapper {
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary);
+    flex: 1;
+}
+
+.book__image {
+    object-fit: cover;
+}
+
+.book__info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.book__title {
+    color: var(--title);
+    font-weight: bold;
+}
+
+.book__author {
+    font-size: 13px;
+}
+
+.book__year {
+    font-size: 11px;
+}
+
+.book__fav-wrapper {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    margin: 10px;
+}
+
+.book__fav-btn {
+    transform: translate(11%, 11%);
+    width: 20px;
+    height: 20px;
+}
+
+.book__fav-btn:hover {
+    cursor: pointer;
+    color: var(--red);
 }
 
 .favorites {
@@ -197,7 +266,6 @@ a {
 .favorites-logo {
     transform: translate(23%, 23%);
     color: var(--green);
-    opacity: 1;
 }
 
 .favorites-logo svg {
