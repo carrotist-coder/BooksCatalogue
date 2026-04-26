@@ -289,6 +289,30 @@ a {
     min-width: var(--favorites-width);
     border-color: var(--border);
     border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    height: 660px;
+    align-self: flex-start;
+    position: sticky;
+    top: var(--section-padding-y);
+    overflow: hidden;
+}
+
+.favorites__list {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+    scrollbar-width: thin;
+    scrollbar-color: var(--shadow) transparent;
+}
+
+.favorites__list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.favorites__list::-webkit-scrollbar-thumb {
+    background-color: var(--shadow);
+    border-radius: 10px;
 }
 
 .favorites__header {
@@ -451,6 +475,9 @@ a {
 
     .favorites {
         width: 100%;
+        height: auto;
+        max-height: 300px;
+        position: static;
     }
 
     .favorites-item {
