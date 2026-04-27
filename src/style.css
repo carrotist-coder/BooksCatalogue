@@ -218,7 +218,7 @@ a {
     display: grid;
     grid-template-columns: repeat(var(--catalog-columns), 1fr);
     gap: var(--gap-md);
-    align-items: start; /*not sure yet*/
+    align-content: start;
 }
 
 .book {

@@ -7,6 +7,12 @@ const searchForm = document.querySelector('#search-form');
 const searchInput = document.querySelector('#search-form__input');
 const resultsGrid = document.querySelector('#results-grid');
 
+const showInitialState = () => {
+    renderMessage(resultsGrid, MESSAGES.EMPTY_QUERY);
+};
+
+document.addEventListener('DOMContentLoaded', showInitialState);
+
 searchForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const query = searchInput.value.trim();
