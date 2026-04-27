@@ -8,4 +8,6 @@ export const getCoverUrl = (coverId) => {
         : NO_IMAGE_FILENAME;
 };
 
+export const getFavouriteCounterText = (count) => `${count} books saved`;
 export const formatAuthors = (authors) => authors ? authors.join(', ') : MESSAGES.UNKNOWN_AUTHOR;
+export const formatYear = (year) => year || MESSAGES.UNKNOWN_YEAR;

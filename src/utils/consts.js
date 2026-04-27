@@ -8,6 +8,9 @@ export const MESSAGES = {
     NO_RESULTS: 'No books found. Try another search.',
     ERROR: 'Something went wrong. Please try again later.',
     EMPTY_QUERY: 'Please enter a book title, author or keyword (3+ characters)',
+    NO_FAVORITES: 'No favorites yet',
     UNKNOWN_AUTHOR: 'Unknown Author',
     UNKNOWN_YEAR: 'N/A'
 };
+
+export const STORAGE_KEY = 'library_favorites';
