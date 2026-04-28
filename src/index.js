@@ -1,4 +1,4 @@
-import './style.css';
+import './styles/style.css';
 import { fetchBooks } from './scripts/api';
 import { createBookCard, renderLoader, renderMessage, renderFavorites } from './scripts/ui';
 import { MESSAGES, MIN_QUERY_LENGTH } from './utils/consts';

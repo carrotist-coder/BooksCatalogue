@@ -1,0 +1,85 @@
+/* Global + Light Theme */
+:root {
+    --white: #ffffff;
+    --green: #27694d;
+    --yellow: #daa520;
+    --red: #ef4444;
+    --brown: #383129;
+    --black: #2a2622;
+
+    --title: #2b2622;
+    --text: #7c736a;
+    --border: #E7E2DA;
+
+    --background: #f7f4ef;
+    --card: #fcfaf7;
+    --secondary: #eeebe4;
+    --shadow: #c4b8a8;
+    --favorite: #eaf0ed;
+    --error-bg: #fff5f5;
+
+    /* Breakpoints */
+    --bp-desktop: 1200px;
+    --bp-tablet-landscape: 1024px;
+    --bp-tablet: 768px;
+    --bp-mobile: 480px;
+
+    /* Catalog columns */
+    --catalog-columns: 5;
+    --catalog-columns-landscape: 4;
+    --catalog-columns-tablet: 3;
+    --catalog-columns-mobile: 2;
+
+    /* Section paddings */
+    --section-padding-x: 80px;
+    --section-padding-y: 30px;
+    --section-padding-x-tablet: 30px;
+    --section-padding-x-mobile: 16px;
+
+    /* Fonts */
+    --font-heading: 'Playfair Display';
+    --font-body: 'Source Sans 3';
+    --font-size-base: 16px;
+    --font-size-xs: 0.6875rem;    /* 11px */
+    --font-size-sm: 0.8125rem;    /* 13px */
+    --font-size-p: 0.875rem;      /* 14px */
+    --font-size-md: 1.125rem;     /* 18px */
+    --font-size-lg: 1.5rem;       /* 24px */
+    --font-size-xl: 1.75rem;      /* 28px */
+
+    /* Icons */
+    --icon-size: 30px;
+    --icon-size-fav-wrapper: 30px;
+    --icon-size-fav-btn: 20px;
+    --icon-size-logo-wrapper: 40px;
+    --icon-size-fav-logo-wrapper: 30px;
+    --icon-size-loader: 40px;
+
+    /* Radius */
+    --radius-md: 10px;
+    --radius-logo: 30%;
+    --radius-round: 100%;
+
+    /* Favorites */
+    --favorites-width: calc(100% / 6);
+
+    /* Gaps */
+    --gap-sm: 10px;
+    --gap-md: 15px;
+    --gap-lg: 20px;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    --background: #1a1a1a;
+    --card: #2d2d2d;
+    --secondary: #3d3d3d;
+    --border: #444444;
+    --title: #f0f0f0;
+    --text: #b0b0b0;
+    --shadow: #000000;
+    --favorite: #2a3a32;
+    --error-bg: #442a2a;
+    --white: #1a1a1a;
+    --green: #4ade80;
+}

@@ -1,0 +1,20 @@
+.message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: var(--section-padding-x-tablet);
+    background: var(--secondary);
+    border-radius: var(--radius-md);
+    border: 1px dashed var(--shadow);
+}
+
+.message--error {
+    color: var(--red);
+    border-color: var(--red);
+    background: var(--error-bg);
+}
+
+#favorites-list .message {
+    background: transparent;
+    border: none;
+    padding: var(--gap-md) 0;
+}
