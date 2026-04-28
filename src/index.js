@@ -1,9 +1,10 @@
 import './style.css';
 import { fetchBooks } from './scripts/api';
 import { createBookCard, renderLoader, renderMessage, renderFavorites } from './scripts/ui';
-import { MESSAGES } from './utils/consts';
+import { MESSAGES, MIN_QUERY_LENGTH } from './utils/consts';
 import { getFavorites, saveToFavorites, removeFromFavorites, isBookFavorite } from './scripts/storage';
 import {initTheme, toggleTheme} from "./scripts/theme";
+import {debounce} from "./utils/debounce";
 
 const searchForm = document.querySelector('#search-form');
 const searchInput = document.querySelector('#search-form__input');
@@ -20,31 +21,26 @@ const updateFavoritesUI = () => {
 
 // initial UI state on page load
 const showInitialState = () => {
+    initTheme();
     renderMessage(resultsGrid, MESSAGES.EMPTY_QUERY);
     updateFavoritesUI();
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-    initTheme();
-    showInitialState();
-});
+document.addEventListener('DOMContentLoaded', () => showInitialState());
 
-// Handles book search form submission
-searchForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const query = searchInput.value.trim();
-
-    // search query must be at least 3 characters
-    if (query.length < 3) {
+async function performSearch(query) {
+    const trimmedQuery = query.trim();
+    if (trimmedQuery.length < MIN_QUERY_LENGTH) {
         renderMessage(resultsGrid, MESSAGES.EMPTY_QUERY);
         return;
     }
 
     try {
         renderLoader(resultsGrid);
-        const books = await fetchBooks(query);
 
+        const books = await fetchBooks(trimmedQuery);
         currentSearchDocs = books;
+
         resultsGrid.innerHTML = '';
 
         if (books.length === 0) {
@@ -52,7 +48,6 @@ searchForm.addEventListener('submit', async (e) => {
             return;
         }
 
-        // Render search results
         books.forEach(book => {
             resultsGrid.insertAdjacentHTML('beforeend', createBookCard(book));
         });
@@ -60,6 +55,20 @@ searchForm.addEventListener('submit', async (e) => {
     } catch (error) {
         renderMessage(resultsGrid, MESSAGES.ERROR, "error");
     }
+}
+
+const debouncedSearch = debounce(() => {
+    performSearch(searchInput.value);
+});
+
+searchInput.addEventListener('input', () => {
+    debouncedSearch();
+});
+
+// Handles book search form submission
+searchForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    await performSearch(searchInput.value);
 });
 
 // Global event listener for favorite buttons using event delegation
@@ -94,7 +103,4 @@ const handleToggleFavorite = (e) => {
 
 resultsGrid.addEventListener('click', handleToggleFavorite);
 favoritesList.addEventListener('click', handleToggleFavorite);
-
-themeBtn.addEventListener('click', () => {
-    toggleTheme();
-});
+themeBtn.addEventListener('click', toggleTheme);
