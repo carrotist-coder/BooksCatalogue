@@ -13,4 +13,10 @@ export const MESSAGES = {
     UNKNOWN_YEAR: 'N/A'
 };
 
+export const THEMES = {
+    LIGHT: 'light',
+    DARK: 'dark',
+};
+
 export const STORAGE_KEY = 'library_favorites';
+export const THEME_KEY = 'library_theme';

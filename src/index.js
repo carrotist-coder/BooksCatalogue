@@ -3,11 +3,13 @@ import { fetchBooks } from './scripts/api';
 import { createBookCard, renderLoader, renderMessage, renderFavorites } from './scripts/ui';
 import { MESSAGES } from './utils/consts';
 import { getFavorites, saveToFavorites, removeFromFavorites, isBookFavorite } from './scripts/storage';
+import {initTheme, toggleTheme} from "./scripts/theme";
 
 const searchForm = document.querySelector('#search-form');
 const searchInput = document.querySelector('#search-form__input');
 const resultsGrid = document.querySelector('#results-grid');
 const favoritesList = document.querySelector('#favorites-list');
+const themeBtn = document.querySelector('#theme-toggle');
 
 // Internal state to store the latest search results for easy favorite toggling
 let currentSearchDocs = [];
@@ -22,7 +24,10 @@ const showInitialState = () => {
     updateFavoritesUI();
 };
 
-document.addEventListener('DOMContentLoaded', showInitialState);
+document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
+    showInitialState();
+});
 
 // Handles book search form submission
 searchForm.addEventListener('submit', async (e) => {
@@ -89,3 +94,7 @@ const handleToggleFavorite = (e) => {
 
 resultsGrid.addEventListener('click', handleToggleFavorite);
 favoritesList.addEventListener('click', handleToggleFavorite);
+
+themeBtn.addEventListener('click', () => {
+    toggleTheme();
+});
