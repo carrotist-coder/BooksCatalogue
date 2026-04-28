@@ -17,9 +17,7 @@ const themeBtn = document.querySelector('#theme-toggle');
 let currentSearchDocs = [];
 
 // Render favorites sidebar and update counter
-const updateFavoritesUI = () => {
-    renderFavorites(favoritesList, getFavorites());
-};
+const updateFavoritesUI = () => renderFavorites(favoritesList, getFavorites());
 
 /**
  * Sync the favorite button states in the main search grid

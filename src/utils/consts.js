@@ -7,7 +7,7 @@ export const MIN_QUERY_LENGTH = 3;
 export const MESSAGES = {
     LOADING: 'Loading...',
     NO_RESULTS: 'No books found. Try another search.',
-    ERROR: 'Something went wrong. Please try again later.',
+    ERROR: 'Network error. Please try again later.',
     EMPTY_QUERY: `Please enter a book title, author or keyword (${MIN_QUERY_LENGTH}+ characters)`,
     NO_FAVORITES: 'No favorites yet',
     UNKNOWN_AUTHOR: 'Unknown Author',
