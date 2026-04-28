@@ -7,7 +7,7 @@ export const getBooksUrl = (query) => `${BASE_URL}?q=${encodeURIComponent(query)
 export const getCoverUrl = (coverId) => {
     return coverId
         ? `${COVERS_URL}/${coverId}.jpg`
-        : NO_IMAGE_FILENAME;
+        : `./${NO_IMAGE_FILENAME}`;
 };
 
 // formatting helpers for UI display

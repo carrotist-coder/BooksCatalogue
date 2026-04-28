@@ -23,7 +23,7 @@ export const createBookCard = (book) => {
             </div>
             <div class="book__fav-wrapper">
                 <svg class="book__fav-btn ${isFavorite ? 'book__fav-btn--active' : ''}">
-                    <use href="assets/heart.svg"></use>
+                    <use href="./assets/heart.svg"></use>
                 </svg>
             </div>
         </div>
@@ -48,7 +48,7 @@ export const createFavoriteItem = (book) => {
             </div>
             <div class="favorites-item__fav-wrapper">
                 <svg class="favorites-item__fav-btn">
-                    <use href="assets/heart.svg"></use>
+                    <use href="./assets/heart.svg"></use>
                 </svg>
             </div>
         </div>
