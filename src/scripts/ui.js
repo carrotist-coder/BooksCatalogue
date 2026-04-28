@@ -2,6 +2,10 @@ import {formatAuthors, formatYear, getCoverUrl, getFavouriteCounterText} from ".
 import {MESSAGES} from "../utils/consts";
 import {isBookFavorite} from "./storage";
 
+/**
+ * HTML template for a book card in the search results
+ * @param {Object} book - book data object
+ */
 export const createBookCard = (book) => {
     const { title, author_name, first_publish_year, cover_i, key } = book;
     const isFavorite = isBookFavorite(key);
@@ -26,6 +30,11 @@ export const createBookCard = (book) => {
     `;
 };
 
+
+/**
+ * HTML template for a compact book item in the favorites sidebar
+ * @param {Object} book - saved book data object
+ */
 export const createFavoriteItem = (book) => {
     return `
         <div class="favorites-item" data-id="${book.key}">
@@ -46,6 +55,7 @@ export const createFavoriteItem = (book) => {
     `;
 };
 
+// Render the list of favorite books into the container (sidebar)
 export const renderFavorites = (container, favorites) => {
     const counter = document.querySelector('#favorites-count');
     if (counter) counter.textContent = getFavouriteCounterText(favorites.length);
