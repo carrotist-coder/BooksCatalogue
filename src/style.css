@@ -295,6 +295,7 @@ a {
     transform: translate(11%, 11%);
     width: var(--icon-size-fav-btn);
     height: var(--icon-size-fav-btn);
+    fill: none;
 }
 
 .book__fav-btn:hover {
@@ -359,6 +360,7 @@ a {
 .favorites-logo {
     transform: translate(23%, 23%);
     color: var(--green);
+    fill: none;
 }
 
 .favorites-logo svg {
@@ -450,6 +452,7 @@ a {
     width: var(--icon-size-fav-btn);
     height: var(--icon-size-fav-btn);
     color: var(--red);
+    fill: var(--red);
     cursor: pointer;
 }
 
